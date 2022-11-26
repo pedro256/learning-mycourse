@@ -1,0 +1,40 @@
+﻿version: '3.4'
+
+networks:
+  mycourse-container:
+    driver: bridge
+
+services:
+  app:
+    container_name: server
+    build: .
+    command: dotnet Api.Learning.Api/Api.Learning.Api.dll
+    ports:
+      - "3000:80"
+    volumes:
+      - .:/usr/app
+    depends_on:
+      - db
+
+  db:
+    container_name: 'db'
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_USER: "root"
+      POSTGRES_DB: "mycoursedb"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+  
+  pgadmin:
+    container_name: 'db-pgadmin'
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "pedroh93601@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "1234"
+    ports:
+      - "16543:80"
+    depends_on:
+      - db
