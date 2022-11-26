@@ -104,9 +104,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\acer\\Documents\\repositories\\apimycourse\\apimycourse\\apimycourse.csproj",
-      "projectName": "apimycourse",
-      "projectPath": "C:\\Users\\acer\\Documents\\repositories\\apimycourse\\apimycourse\\apimycourse.csproj",
+      "projectUniqueName": "C:\\Users\\acer\\Documents\\repositories\\apimycourse\\apimycourse\\Api.Learning.Api.csproj",
+      "projectName": "Api.Learning.Api",
+      "projectPath": "C:\\Users\\acer\\Documents\\repositories\\apimycourse\\apimycourse\\Api.Learning.Api.csproj",
       "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\acer\\Documents\\repositories\\apimycourse\\apimycourse\\obj\\",
       "projectStyle": "PackageReference",

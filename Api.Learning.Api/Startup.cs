@@ -5,13 +5,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Api.Learning.DataAccess.Context;
+using Microsoft.EntityFrameworkCore;
 
-namespace apimycourse
+namespace Api.Learning.MyCourse
 {
     public class Startup
     {
@@ -26,6 +30,18 @@ namespace apimycourse
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services
+                .AddEntityFrameworkNpgsql()
+                .AddDbContext<ApiLearningContext>(op =>
+                {
+                    op.UseNpgsql(
+                        Configuration.GetConnectionString("MyCourseDB"),
+                        x=>x.MigrationsAssembly(typeof(ApiLearningContext).Assembly.FullName)
+                        );
+                   
+                });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +62,7 @@ namespace apimycourse
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }
