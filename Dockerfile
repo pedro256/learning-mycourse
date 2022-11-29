@@ -9,11 +9,11 @@ WORKDIR /src
 COPY ["Api.Learning.Api/Api.Learning.Api.csproj", "Api.Learning.Api/"]
 RUN dotnet restore "Api.Learning.Api/Api.Learning.Api.csproj"
 COPY . .
-WORKDIR "/src"
-RUN dotnet build "Api.Learning.Api/Api.Learning.Api.csproj" -c Release -o /app/build
+WORKDIR "/src/Api.Learning.Api"
+RUN dotnet build "Api.Learning.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Api.Learning.Api/Api.Learning.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Api.Learning.Api.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
