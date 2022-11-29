@@ -15,7 +15,7 @@ namespace Api.Learning.MyCourse.Controllers
         {
             LifeResponseDto response = new LifeResponseDto();
             response.Name = "Api Course";
-            response.Version = "1.1.0";
+            response.Version = "1.1.2";
             response.Life = true;
 
             return response;

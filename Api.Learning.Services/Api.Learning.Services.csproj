@@ -1,11 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
 	 <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Students\CreateStudentService\" />
+    <ProjectReference Include="..\Api.Learning.DataAccess\Api.Learning.DataAccess.csproj" />
+    <ProjectReference Include="..\Api.Learning.Dtos\Api.Learning.Dtos.csproj" />
   </ItemGroup>
 
 </Project>

@@ -14,6 +14,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Api.Learning.DataAccess.Context;
 using Microsoft.EntityFrameworkCore;
+using Api.Learning.Api;
 
 namespace Api.Learning.MyCourse
 {
@@ -31,16 +32,7 @@ namespace Api.Learning.MyCourse
         {
             services.AddControllers();
 
-            services
-                .AddEntityFrameworkNpgsql()
-                .AddDbContext<ApiLearningContext>(op =>
-                {
-                    op.UseNpgsql(
-                        Configuration.GetConnectionString("MyCourseDB"),
-                        x=>x.MigrationsAssembly(typeof(ApiLearningContext).Assembly.FullName)
-                        );
-                   
-                });
+            DependencyInjection.Config(services, Configuration);
 
         }
 
