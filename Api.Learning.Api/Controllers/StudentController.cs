@@ -19,11 +19,16 @@ namespace Api.Learning.Api.Controllers
         }
 
         [HttpPost]
-        public StudentDto createStudent(
-            [FromBody] StudentDto dto
+        public IActionResult createStudent(
+            [FromBody] CreateStudentDto dto
             )
         {
-            return createStudentServices.execute(dto);
+
+            if (!ModelState.IsValid) { return BadRequest(); }
+
+            var result = createStudentServices.execute(dto);
+
+            return Created("",result);
         }
     }
 }
