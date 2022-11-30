@@ -22,5 +22,14 @@ namespace Api.Learning.DataAccess.Repository.Student
             _context.SaveChanges();
             return data;
         }
+
+        public void DeleteById(StudentEntity entity)
+        {
+
+            _context.StudentEntity.Attach(entity);
+            _context.StudentEntity.Remove(entity);
+            _context.SaveChanges();
+
+        }
     }
 }

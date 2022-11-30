@@ -10,5 +10,7 @@ namespace Api.Learning.DataAccess.Repository.Student
     public interface IStudentRepository : IGenericRepository<StudentEntity>
     {
         StudentEntity createStudent(StudentEntity data);
+
+        void DeleteById (StudentEntity data);
     }
 }

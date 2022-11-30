@@ -1,6 +1,9 @@
 ﻿using Api.Learning.DataAccess.Context;
 using Api.Learning.DataAccess.Repository.Student;
 using Api.Learning.Services.Services.Students.CreateStudentService;
+using Api.Learning.Services.Services.Students.DeleteStudentService;
+using Api.Learning.Services.Services.Students.ListarStudentService;
+using Api.Learning.Services.Services.Students.ShowStudentService;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,6 +40,9 @@ namespace Api.Learning.Api
             #region SERVICES
 
             services.AddScoped<ICreateStudentServices, CreateStudentServices>();
+            services.AddScoped<IListarStudentService, ListarStudentService>();
+            services.AddScoped<IShowStudentService, ShowStudentService>();
+            services.AddScoped<IDeleteStudentService, DeleteStudentService>();
             #endregion
 
 

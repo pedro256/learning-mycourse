@@ -18,7 +18,7 @@ namespace Api.Learning.Services.Services.Students.CreateStudentService
             _studentRepository = studentRepository;
         }
 
-        public StudentDto execute(StudentDto student)
+        public CreateStudentDto execute(CreateStudentDto student)
         {
             StudentEntity result = _studentRepository.createStudent(new StudentEntity
             {

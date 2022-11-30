@@ -7,6 +7,6 @@ namespace Api.Learning.Services.Services.Students.CreateStudentService
 {
     public interface ICreateStudentServices
     {
-        StudentDto execute(StudentDto student);
+        CreateStudentDto execute(CreateStudentDto student);
     }
 }
