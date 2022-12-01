@@ -11,6 +11,6 @@ namespace Api.Learning.DataAccess.Repository.Student
     {
         StudentEntity createStudent(StudentEntity data);
 
-        void DeleteById (StudentEntity data);
+        void DeleteStudent (StudentEntity data);
     }
 }

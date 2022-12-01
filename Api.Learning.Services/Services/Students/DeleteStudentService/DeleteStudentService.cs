@@ -24,7 +24,7 @@ namespace Api.Learning.Services.Services.Students.DeleteStudentService
             {
                 return 0;
             }
-            _studentRepository.DeleteById(result);
+            _studentRepository.DeleteStudent(result);
             return Id;
         }
     }

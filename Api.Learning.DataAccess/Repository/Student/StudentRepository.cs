@@ -23,7 +23,7 @@ namespace Api.Learning.DataAccess.Repository.Student
             return data;
         }
 
-        public void DeleteById(StudentEntity entity)
+        public void DeleteStudent(StudentEntity entity)
         {
 
             _context.StudentEntity.Attach(entity);
