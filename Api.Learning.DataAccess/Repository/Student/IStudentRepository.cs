@@ -12,5 +12,8 @@ namespace Api.Learning.DataAccess.Repository.Student
         StudentEntity createStudent(StudentEntity data);
 
         void DeleteStudent (StudentEntity data);
+
+        bool ExistStudentWithEmail(string email);
+
     }
 }

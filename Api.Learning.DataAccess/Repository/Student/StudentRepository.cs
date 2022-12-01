@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using Api.Learning.Dtos.Dtos.Student;
 using Api.Learning.DataAccess.Context;
+using System.Linq;
 
 namespace Api.Learning.DataAccess.Repository.Student
 {
@@ -30,6 +31,16 @@ namespace Api.Learning.DataAccess.Repository.Student
             _context.StudentEntity.Remove(entity);
             _context.SaveChanges();
 
+        }
+
+        public bool ExistStudentWithEmail(string email)
+        {
+           int counter =  _context.StudentEntity.Count(x => x.Email == email);
+            if (counter > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -3,6 +3,7 @@ using Api.Learning.Services.Services.Students.CreateStudentService;
 using Api.Learning.Services.Services.Students.DeleteStudentService;
 using Api.Learning.Services.Services.Students.ListarStudentService;
 using Api.Learning.Services.Services.Students.ShowStudentService;
+using Api.Learning.Utils.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Learning.Api.Controllers
@@ -37,10 +38,18 @@ namespace Api.Learning.Api.Controllers
         {
 
             if (!ModelState.IsValid) { return BadRequest(); }
+            try
+            {
+                var result = createStudentServices.execute(dto);
+                return Created("", result);
+            }
+            catch(BadRequestException e)
+            {
+                return BadRequest(e.Message);
+            }
+            
 
-            var result = createStudentServices.execute(dto);
-
-            return Created("",result);
+            
         }
 
         [HttpGet]
