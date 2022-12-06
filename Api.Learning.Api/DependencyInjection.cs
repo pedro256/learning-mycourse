@@ -5,6 +5,7 @@ using Api.Learning.Services.Services.Students.CreateStudentService;
 using Api.Learning.Services.Services.Students.DeleteStudentService;
 using Api.Learning.Services.Services.Students.ListarStudentService;
 using Api.Learning.Services.Services.Students.ShowStudentService;
+using Api.Learning.Services.Services.Students.UpdateStudentService;
 using Api.Learning.Services.Services.Teachers.CreateTeacherService;
 using Api.Learning.Services.Services.Teachers.DeleteTeacherService;
 using Api.Learning.Services.Services.Teachers.ListTeachersService;
@@ -49,6 +50,7 @@ namespace Api.Learning.Api
             services.AddScoped<IListarStudentService, ListarStudentService>();
             services.AddScoped<IShowStudentService, ShowStudentService>();
             services.AddScoped<IDeleteStudentService, DeleteStudentService>();
+            services.AddScoped<IUpdateStudentService,UpdateStudentService>();
 
             services.AddScoped<IDeleteTeacherService, DeleteTeacherService>();
             services.AddScoped<ICreateTeacherService, CreateTeacherService>();

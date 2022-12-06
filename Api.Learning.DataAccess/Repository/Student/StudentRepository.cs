@@ -42,5 +42,12 @@ namespace Api.Learning.DataAccess.Repository.Student
             }
             return false;
         }
+
+        public StudentEntity updateStudent(StudentEntity data)
+        {
+            _context.StudentEntity.Update(data);
+            _context.SaveChanges();
+            return data;
+        }
     }
 }

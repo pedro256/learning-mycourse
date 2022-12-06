@@ -15,5 +15,7 @@ namespace Api.Learning.DataAccess.Repository.Student
 
         bool ExistStudentWithEmail(string email);
 
+        StudentEntity updateStudent(StudentEntity data);
+
     }
 }
