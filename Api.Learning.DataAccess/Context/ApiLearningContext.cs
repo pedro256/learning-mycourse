@@ -1,4 +1,5 @@
 ﻿using Api.Learning.DataAccess.Entities.Base;
+using Api.Learning.DataAccess.Entities.Course;
 using Api.Learning.DataAccess.Entities.Student;
 using Api.Learning.DataAccess.Entities.Teacher;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +14,7 @@ namespace Api.Learning.DataAccess.Context
     {
         public DbSet<StudentEntity> StudentEntity { get; set; }
         public DbSet<TeacherEntity> TeacherEntity { get; set; }
-
+        public DbSet<CourseEntity> CourseEntity { get; set; }
         public ApiLearningContext(DbContextOptions<ApiLearningContext> options) :
             base(options)
         {

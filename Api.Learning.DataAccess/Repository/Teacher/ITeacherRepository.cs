@@ -12,5 +12,8 @@ namespace Api.Learning.DataAccess.Repository.Teacher
         TeacherEntity createTeacher(TeacherEntity entity);
 
         void deleteTeacher(TeacherEntity entity);
+
+        bool existsTeacherWithId(int id);
+
     }
 }

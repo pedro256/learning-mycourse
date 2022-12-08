@@ -1,6 +1,10 @@
 ﻿using Api.Learning.DataAccess.Context;
+using Api.Learning.DataAccess.Repository.Course;
 using Api.Learning.DataAccess.Repository.Student;
 using Api.Learning.DataAccess.Repository.Teacher;
+using Api.Learning.Services.Services.Courses.CreateCourseService;
+using Api.Learning.Services.Services.Courses.ListarCourseService;
+using Api.Learning.Services.Services.Courses.ShowCourseService;
 using Api.Learning.Services.Services.Students.CreateStudentService;
 using Api.Learning.Services.Services.Students.DeleteStudentService;
 using Api.Learning.Services.Services.Students.ListarStudentService;
@@ -42,6 +46,7 @@ namespace Api.Learning.Api
             #region REPOSITORIES
             services.AddScoped<IStudentRepository,StudentRepository>();
             services.AddScoped<ITeacherRepository, TeacherRepository>();
+            services.AddScoped<ICourseRepository, CourseRepository>();
             #endregion
 
             #region SERVICES
@@ -56,6 +61,10 @@ namespace Api.Learning.Api
             services.AddScoped<ICreateTeacherService, CreateTeacherService>();
             services.AddScoped<IShowTeacherService, ShowTeacherService>();
             services.AddScoped<IListTeacherService, ListTeacherService>();
+
+            services.AddScoped<ICreateCourseService, CreateCourseService>();
+            services.AddScoped<IListarCourser, ListarCourser>();
+            services.AddScoped<IShowCourseService, ShowCourseService>();
             #endregion
 
 
