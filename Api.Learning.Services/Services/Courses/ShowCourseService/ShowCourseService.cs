@@ -29,6 +29,7 @@ namespace Api.Learning.Services.Services.Courses.ShowCourseService
             }
             return new CourseDto
             {
+                Id = course.Id,
                 Title = course.Title,
                 Description = course.Description,
                 Teacher = new TeacherDto {

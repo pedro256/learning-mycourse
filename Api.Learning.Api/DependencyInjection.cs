@@ -3,8 +3,10 @@ using Api.Learning.DataAccess.Repository.Course;
 using Api.Learning.DataAccess.Repository.Student;
 using Api.Learning.DataAccess.Repository.Teacher;
 using Api.Learning.Services.Services.Courses.CreateCourseService;
+using Api.Learning.Services.Services.Courses.DeleteCourseService;
 using Api.Learning.Services.Services.Courses.ListarCourseService;
 using Api.Learning.Services.Services.Courses.ShowCourseService;
+using Api.Learning.Services.Services.Courses.UpdateCourseService;
 using Api.Learning.Services.Services.Students.CreateStudentService;
 using Api.Learning.Services.Services.Students.DeleteStudentService;
 using Api.Learning.Services.Services.Students.ListarStudentService;
@@ -65,6 +67,8 @@ namespace Api.Learning.Api
             services.AddScoped<ICreateCourseService, CreateCourseService>();
             services.AddScoped<IListarCourser, ListarCourser>();
             services.AddScoped<IShowCourseService, ShowCourseService>();
+            services.AddScoped<IDeleteCourseService, DeleteCourseService>();
+            services.AddScoped<IUpdateCourseService, UpdateCourseService>();
             #endregion
 
 
